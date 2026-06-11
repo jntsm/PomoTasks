@@ -10,6 +10,7 @@
 const CACHE_NAME = 'pomotasks-v1';
 const APP_SHELL_FILES = [
   // Exemplo: '/', '/index.html', '/css/style.css', '/js/app.js'
+  // Importante: se qualquer arquivo desta lista falhar, o install inteiro falha.
 ];
 
 self.addEventListener('install', (event) => {
