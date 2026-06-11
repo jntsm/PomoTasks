@@ -23,5 +23,10 @@ export function loadTheme() {
 
   if (savedTheme) {
     document.documentElement.dataset.theme = savedTheme;
+    return;
+  }
+
+  if (window.matchMedia?.('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.dataset.theme = 'dark';
   }
 }

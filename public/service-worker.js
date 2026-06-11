@@ -25,7 +25,7 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(self.clients.claim());
 });
 
-self.addEventListener('fetch', (event) => {
-  // TODO: Implementar estratégia de resposta para modo offline.
-  void event;
+self.addEventListener('fetch', (_event) => {
+  // TODO: Implementar estratégia de resposta para modo offline, por exemplo:
+  // _event.respondWith(fetch(_event.request));
 });
