@@ -1,0 +1,155 @@
+/* ==================================================
+   Variáveis globais de tema
+   ================================================== */
+:root {
+  --bg-color: #f3f4f6;
+  --surface-color: #ffffff;
+  --text-color: #111827;
+  --muted-text-color: #6b7280;
+  --primary-color: #2563eb;
+  --primary-color-hover: #1d4ed8;
+  --border-color: #e5e7eb;
+  --shadow-color: rgba(17, 24, 39, 0.08);
+}
+
+/* Tema escuro por atributo (controlado via JS) */
+:root[data-theme='dark'] {
+  --bg-color: #111827;
+  --surface-color: #1f2937;
+  --text-color: #f9fafb;
+  --muted-text-color: #9ca3af;
+  --primary-color: #60a5fa;
+  --primary-color-hover: #93c5fd;
+  --border-color: #374151;
+  --shadow-color: rgba(0, 0, 0, 0.25);
+}
+
+/* Preferência do sistema: aplica escuro quando nenhum tema manual foi definido */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg-color: #111827;
+    --surface-color: #1f2937;
+    --text-color: #f9fafb;
+    --muted-text-color: #9ca3af;
+    --primary-color: #60a5fa;
+    --primary-color-hover: #93c5fd;
+    --border-color: #374151;
+    --shadow-color: rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* ==================================================
+   Reset e base
+   ================================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* ==================================================
+   Header da aplicação
+   ================================================== */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* ==================================================
+   Conteúdo principal
+   ================================================== */
+.app-main {
+  width: min(720px, 100% - 2rem);
+  margin: 2rem auto;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.timer-card,
+.session-info {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px var(--shadow-color);
+  padding: 1.5rem;
+}
+
+/* ==================================================
+   Bloco do timer
+   ================================================== */
+.timer-display {
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin: 1rem 0 1.25rem;
+}
+
+.timer-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+/* ==================================================
+   Botões
+   ================================================== */
+button {
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  padding: 0.65rem 1rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: var(--primary-color);
+  color: #ffffff;
+}
+
+.primary-btn:hover {
+  background: var(--primary-color-hover);
+}
+
+.secondary-btn {
+  background: transparent;
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+/* ==================================================
+   Rodapé
+   ================================================== */
+.app-footer {
+  padding: 1rem 1.5rem;
+  color: var(--muted-text-color);
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+
+/* ==================================================
+   Responsividade
+   ================================================== */
+@media (max-width: 640px) {
+  .app-main {
+    margin: 1.25rem auto;
+  }
+
+  .timer-card,
+  .session-info {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="POMOTasks - PWA Pomodoro App de Produtividade" />
+    <meta name="theme-color" content="#1f2937" />
+
+    <link rel="manifest" href="public/manifest.json" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="assets/icons/icon-192.png" />
+
+    <title>POMOTasks</title>
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>POMOTasks</h1>
+      <button id="theme-toggle" class="secondary-btn" type="button" aria-label="Alternar tema">
+        Alternar tema
+      </button>
+    </header>
+
+    <main class="app-main">
+      <section class="timer-card" aria-labelledby="timer-title">
+        <h2 id="timer-title">Pomodoro</h2>
+
+        <p id="timer-display" class="timer-display" aria-live="polite">25:00</p>
+
+        <div class="timer-controls" role="group" aria-label="Controles do timer">
+          <button id="start-btn" class="primary-btn" type="button">Iniciar</button>
+          <button id="pause-btn" class="secondary-btn" type="button">Pausar</button>
+          <button id="reset-btn" class="secondary-btn" type="button">Resetar</button>
+        </div>
+      </section>
+
+      <section class="session-info" aria-labelledby="session-title">
+        <h2 id="session-title">Sessão atual</h2>
+        <p id="session-label">Foco</p>
+        <p id="session-progress">Ciclos concluídos: 0</p>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <small>Estrutura inicial pronta para desenvolvimento incremental.</small>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
