@@ -16,9 +16,11 @@ const APP_SHELL_FILES = [
 self.addEventListener('install', (event) => {
   // TODO: Pré-cache de arquivos essenciais.
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL_FILES))
+    caches
+      .open(CACHE_NAME)
+      .then((cache) => cache.addAll(APP_SHELL_FILES))
+      .then(() => self.skipWaiting())
   );
-  self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {

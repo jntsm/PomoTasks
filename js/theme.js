@@ -26,6 +26,6 @@ export function loadTheme() {
     return;
   }
 
-  const systemPrefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches === true;
+  const systemPrefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches || false;
   document.documentElement.dataset.theme = systemPrefersDark ? 'dark' : 'light';
 }
