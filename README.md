@@ -53,4 +53,4 @@ Este repositório está em evolução contínua. O README documenta a proposta c
 
 ## Licença
 
-Distribuído sob a licença MIT. Veja `/home/runner/work/PomoTasks/PomoTasks/jntsm/PomoTasks/LICENSE` para mais detalhes.
+Distribuído sob a licença MIT. Veja `LICENSE` para mais detalhes.
